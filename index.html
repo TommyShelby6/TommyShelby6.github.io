@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="面向面试官展示多品牌中央空调协议网关与住宅智能屏可视对讲终端项目。"
+    />
+    <title>实习项目展示 · ZXC</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="site">
+      <header class="header">
+        <div class="brand">
+          <span class="brand-mark">LA</span>
+          <span>实习项目展示</span>
+        </div>
+        <button class="new-button" id="newProjectButton" type="button">＋ 新建项目</button>
+      </header>
+
+      <div class="layout">
+        <aside class="project-list">
+          <div class="list-heading">
+            <div>
+              <p>MY WORK</p>
+              <h2>我的项目</h2>
+            </div>
+            <span id="projectCount">0</span>
+          </div>
+          <div class="project-items" id="projectItems"></div>
+        </aside>
+
+        <section class="main-area" id="mainArea"></section>
+      </div>
+    </main>
+
+    <div class="modal-backdrop" id="newProjectModal" hidden>
+      <form class="modal" id="newProjectForm">
+        <button type="button" class="close" data-close="newProjectModal" aria-label="关闭">×</button>
+        <p class="overline">NEW PROJECT</p>
+        <h2>创建一个项目</h2>
+        <label>
+          项目名称
+          <input id="projectTitle" required placeholder="例如：嵌入式控制系统" />
+        </label>
+        <label>
+          项目介绍
+          <textarea id="projectDescription" rows="5" placeholder="介绍项目背景、主要功能和实现流程"></textarea>
+        </label>
+        <button class="submit" type="submit">创建项目 <span>→</span></button>
+      </form>
+    </div>
+
+    <div class="modal-backdrop" id="mediaLinkModal" hidden>
+      <form class="modal" id="mediaLinkForm">
+        <button type="button" class="close" data-close="mediaLinkModal" aria-label="关闭">×</button>
+        <p class="overline">ADD MEDIA LINK</p>
+        <h2>添加媒体链接</h2>
+        <label>
+          链接地址
+          <input id="mediaLinkUrl" type="url" required placeholder="https://..." />
+        </label>
+        <label>
+          媒体类型
+          <select id="mediaLinkKind">
+            <option value="image">图片</option>
+            <option value="video">视频</option>
+          </select>
+        </label>
+        <p class="modal-tip">请使用访问者可以直接打开的公开图片或视频链接。</p>
+        <button class="submit" type="submit">添加到项目 <span>→</span></button>
+      </form>
+    </div>
+
+    <input id="mediaInput" hidden type="file" accept="image/*,video/*" multiple />
+    <div class="toast" id="toast" hidden></div>
+    <script src="./app.js"></script>
+  </body>
+</html>
+
